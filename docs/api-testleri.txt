@@ -1,0 +1,38 @@
+
+> bmh231-odev2@1.0.0 test
+> node --test tests/*.test.js
+
+GET /api/etkinlikler
+GET /api/etkinlikler?tur=atolye
+GET /api/etkinlikler?tur=yok
+✔ Liste ve filtre aynı JSON kaynağını kullanır (30.099958ms)
+GET /api/etkinlikler/2
+GET /api/etkinlikler/999
+✔ Tek etkinlik ve bulunamayan kimlik (2.037125ms)
+DELETE /api/etkinlikler/2
+POST /api/etkinlikler/2
+PUT /api/etkinlikler/2
+HEAD /api/etkinlikler/2
+✔ GET dışındaki yöntemler 405 ve Allow döndürür (3.508291ms)
+GET /
+GET /stil.css
+GET /betik.js
+✔ Statik dosyalar doğru MIME ve UTF-8 ile sunulur (3.106625ms)
+GET /sunucu.js
+GET /etkinlikler.json
+GET /.git/config
+GET /yok
+GET /api/etkinlikler/abc
+GET /%2e%2e%2fsunucu.js
+GET /%ZZ
+✔ Kaynak kod, traversal ve bozuk yollar açılmaz (2.082166ms)
+GET /test-dis-kaynak
+✔ Public dışını gösteren sembolik bağlantı sunulmaz (0.589292ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 97.2275

@@ -1,0 +1,45 @@
+$ curl -i http://localhost:3000/api/etkinlikler?tur=atolye
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 27 Oct 2026 13:32:44 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+[{"id":1,"baslik":"Web Programlama Atölyesi","tur":"atolye","tarih":"2026-11-09","yer":"Mühendislik Fakültesi · Bilgisayar Lab. 1","kontenjan":30},{"id":4,"baslik":"Git ile Birlikte Üretmek","tur":"atolye","tarih":"2026-11-12","yer":"Mühendislik Fakültesi · Bilgisayar Lab. 2","kontenjan":25}]
+
+$ curl -i http://localhost:3000/api/etkinlikler/2
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 27 Oct 2026 13:32:44 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"id":2,"baslik":"Yazılım Topluluğu Tanışma Buluşması","tur":"topluluk","tarih":"2026-11-10","yer":"Öğrenci Yaşam Merkezi","kontenjan":120}
+
+$ curl -i http://localhost:3000/api/etkinlikler/999
+HTTP/1.1 404 Not Found
+Content-Type: application/json; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 27 Oct 2026 13:32:44 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+{"hata":"Etkinlik bulunamadı"}
+
+$ curl -i -X DELETE http://localhost:3000/api/etkinlikler/2
+HTTP/1.1 405 Method Not Allowed
+Allow: GET
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 27 Oct 2026 13:32:44 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+Yönteme izin verilmiyor
+

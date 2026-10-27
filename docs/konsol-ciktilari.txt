@@ -1,0 +1,17 @@
+"7" + 3 => 73
+"7" - "2" => 5
+0 == "0" => true
+0 === "0" => false
+"" || "boş" => boş
+typeof NaN => number
+[] ? "dolu" : "boş" => dolu
+[ 'Web Atölyesi', 'Git Atölyesi' ]
+{ id: 3, baslik: 'YZ Söyleşisi', tur: 'soylesi', kontenjan: 200 }
+2
+A7:
+1
+4
+6
+3
+5
+2

@@ -1,0 +1,8 @@
+* eefaafd API sözleşmesini, MIME türlerini ve dosya erişim sınırlarını test et
+* 6ad1141 Öneri formuna tarih, başlık ve e-posta doğrulaması ekle
+* 128c948 Async fetch yükleme, veri kontrolü ve hatadan yeniden deneme akışını ekle
+* b564922 Güvenli DOM kartları ve birlikte çalışan Türkçe filtre aramasını ekle
+* 4705c4b CSS değişkenleriyle duyarlı Grid ve Flexbox görünümünü oluştur
+* 635586b Türkçe semantik sayfa iskeletini ve etiketli öneri formunu kur
+* dcaa096 Yerleşik Node modülleriyle güvenli statik sunucu ve JSON API ekle
+* 525aa9b Proje komutlarını ve altı gerçekçi kampüs etkinliğini tanımla
