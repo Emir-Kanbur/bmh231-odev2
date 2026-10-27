@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bozok kampüsünde öğren, tanış, birlikte üret. Yaklaşan kampüs etkinliklerini keşfet.">
+  <title>Bozok Etkinlik · Kampüste buluşalım</title>
+  <link rel="stylesheet" href="/stil.css">
+  <script src="/betik.js" defer></script>
+</head>
+<body>
+  <a class="atla" href="#liste">Etkinliklere geç</a>
+  <header class="ust kapsayici">
+    <a class="logo" href="/" aria-label="Bozok Etkinlik ana sayfa"><span class="logo-isaret" aria-hidden="true">b.</span>bozok<span class="logo-ince">etkinlik</span></a>
+    <nav aria-label="Ana gezinme"><a href="#liste">Etkinlikler</a><a href="#oneri">Etkinlik öner <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main class="kapsayici">
+    <section id="liste" aria-labelledby="ana-baslik">
+      <div class="hero">
+        <div><p class="ust-yazi"><span class="nokta" aria-hidden="true"></span> KAMPÜSÜN BULUŞMA NOKTASI</p><h1 id="ana-baslik">Bir etkinlik,<br>yeni bir <em>başlangıç.</em></h1><p class="aciklama">Merakını takip et. Birlikte öğren, yeni insanlarla tanış.<br>Bozok kampüsünde sana da bir yer var.</p></div>
+        <aside class="hero-not" aria-label="Etkinlik dönemi"><span class="not-sayi">11<span>/26</span></span><p>Kampüste kasım</p><span class="not-alt">ÖĞREN · PAYLAŞ · KEŞFET</span><span class="not-ok" aria-hidden="true">↙</span></aside>
+      </div>
+      <div class="liste-baslik"><h2>Yaklaşan etkinlikler</h2><span class="donem">KASIM 2026</span></div>
+      <div class="araclar">
+        <div class="filtreler" role="group" aria-label="Etkinlik türü">
+          <button type="button" class="secili" data-tur="" aria-pressed="true">Tümü</button>
+          <button type="button" data-tur="atolye" aria-pressed="false">Atölye</button>
+          <button type="button" data-tur="soylesi" aria-pressed="false">Söyleşi</button>
+          <button type="button" data-tur="topluluk" aria-pressed="false">Topluluk</button>
+        </div>
+        <div class="arama-alan"><label for="arama" class="sr-only">Etkinlik başlığında ara</label><span aria-hidden="true">⌕</span><input id="arama" type="search" placeholder="Bir etkinlik ara…" autocomplete="off"></div>
+      </div>
+      <p id="durum" class="durum" role="status" aria-live="polite">Yükleniyor…</p>
+      <button id="yenile" class="ikincil" type="button" hidden>Yeniden dene</button>
+      <div id="kartlar" class="kartlar" aria-busy="true"></div>
+      <p class="veri-notu">Ders projesi için hazırlanmış gerçekçi etkinliklerdir; resmî etkinlik duyurusu değildir.</p>
+    </section>
+    <section id="oneri" class="oneri" aria-labelledby="oneri-baslik">
+      <div><p class="ust-yazi">SÖZ SENDE</p><h2 id="oneri-baslik">Güzel bir fikrin mi var?</h2><p>Kampüste görmek istediğin etkinliği öner.<br>Bir sonraki buluşma senin fikrinle başlasın.</p><p class="form-notu">Bu ders demosu öneriyi yalnızca tarayıcıda doğrular; göndermez veya kaydetmez.</p></div>
+      <form id="oneri-formu" novalidate>
+        <label for="baslik">Etkinlik adı <span aria-hidden="true">*</span></label><input id="baslik" name="baslik" required minlength="5" placeholder="Nasıl bir etkinlik hayal ediyorsun?" aria-describedby="form-sonuc">
+        <div class="form-satir"><div><label for="tarih">Tarih <span aria-hidden="true">*</span></label><input id="tarih" name="tarih" type="date" required aria-describedby="form-sonuc"></div><div><label for="eposta">E-posta <span aria-hidden="true">*</span></label><input id="eposta" name="eposta" type="email" required placeholder="sen@ornek.com" aria-describedby="form-sonuc"></div></div>
+        <button class="gonder" type="submit">Öneriyi kontrol et <span aria-hidden="true">↗</span></button>
+        <p id="form-sonuc" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="kapsayici"><span>© 2026 Bozok Etkinlik</span><span>BMH231 · Web Programlama <span aria-hidden="true">↗</span></span></footer>
+</body>
+</html>
