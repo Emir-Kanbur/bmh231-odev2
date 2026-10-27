@@ -49,3 +49,34 @@ document.querySelectorAll('[data-tur]').forEach(dugme => {
   });
 });
 arama.addEventListener('input', ciz);
+
+function gecerliEtkinlik(e) {
+  return e && Number.isInteger(e.id) && typeof e.baslik === 'string' && Object.hasOwn(turAdlari, e.tur)
+    && typeof e.yer === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(e.tarih)
+    && !Number.isNaN(Date.parse(e.tarih)) && Number.isInteger(e.kontenjan) && e.kontenjan >= 0;
+}
+async function etkinlikleriYukle() {
+  hazir = false;
+  kartlar.replaceChildren();
+  kartlar.setAttribute('aria-busy', 'true');
+  durum.className = 'durum';
+  durum.textContent = 'Yükleniyor…';
+  yenile.hidden = true;
+  try {
+    const response = await fetch('/api/etkinlikler');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const veri = await response.json();
+    if (!Array.isArray(veri) || !veri.every(gecerliEtkinlik)) throw new Error('Geçersiz etkinlik verisi');
+    etkinlikler = veri;
+    hazir = true;
+    ciz();
+  } catch (hata) {
+    durum.className = 'durum hata';
+    durum.textContent = 'Etkinlikler yüklenemedi. Bağlantınızı kontrol edip yeniden deneyin.';
+    yenile.hidden = false;
+  } finally {
+    kartlar.setAttribute('aria-busy', 'false');
+  }
+}
+yenile.addEventListener('click', etkinlikleriYukle);
+etkinlikleriYukle();
