@@ -1,0 +1,3 @@
+
+> bmh231-odev2@1.0.0 check
+> node --check sunucu.js && node --check public/betik.js

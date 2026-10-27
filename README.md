@@ -48,7 +48,7 @@ API JSON yanıtları `application/json; charset=utf-8` kullanır. Statik dosyala
 - Yükleme başarısız olduğunda “Yeniden dene” düğmesini kullanın.
 - Tab tuşuyla gezinilebilir; ilk bağlantı doğrudan listeye atlar.
 
-Etkinlikler gerçekçi ders örnekleridir; resmî duyuru veya gerçek katılım kaydı değildir. Yazılım topluluğu bir örnek olarak seçilmiştir; öğrencinin üyeliği veya ilgisi doğrulanmamıştır.
+Etkinlikler gerçekçi ders örnekleridir; resmî duyuru veya gerçek katılım kaydı değildir. Emir Kanbur, Açık Kaynak Yazılım Geliştirme Topluluğu üyesi olduğunu belirtmiştir. Kimliği 2 olan tanışma buluşması bu toplulukla ilişkilendirilmiş gerçekçi bir ders örneğidir; resmî etkinlik ilanı değildir. [Üniversitenin topluluk sayfası](https://topluluklar.bozok.edu.tr/Home/Topluluk?GUID=3A759AC7-894D-4B8D-AEF2-6473988383C0).
 
 ## Görünüm
 
@@ -63,3 +63,7 @@ Uygulama, testler, açıklamalar ve rapor OpenAI Codex yardımıyla üretilmişt
 Commit tarihleri gerçektir. En az iki farklı güne yayılmış commit koşulu ilk hazırlama gününde tamamlanamaz; sonraki bir günde gerçek bir çalışma ve commit gerekir. Ölçümlerdeki otomatik tarayıcı/CDP yöntemi ve DevTools arayüzüyle istenen adımlardan ayrılan noktalar PDF raporunda açıkça belirtilmiştir. BOYSİS yüklemesi yapılmamıştır.
 
 İsteğe bağlı tarayıcı testleri: `npm install --no-save playwright`, `npx playwright install chromium`, ayrı uçbirimde `npm start`, ardından `node scripts/tarayici-testleri.cjs`. Kurulu bir Chromium kullanmak için `BROWSER_PATH` ortam değişkenini tanımlayın. Bu araç uygulamanın çalışma zamanı bağımlılığı değildir. Lighthouse raporları Lighthouse 13.5.0 ile yalnızca Accessibility kategorisinde alınmıştır. Gerçek DevTools Network/Console ve 390/1280 cihaz görünümü ekranları da docs klasöründedir.
+
+## 27 Ekim ek incelemesi
+
+Topluluk bilgisi öğrencinin üyelik beyanıyla güncellendi. DevTools Lighthouse panelinde yalnız Accessibility ile 100 → 94 → 100 deneyi tekrarlandı. [Güncel kontrol ve kalan maddeler](docs/inceleme-20261027/UYGUNLUK-KONTROLU.md) ile gerçek yeni kanıtlar ayrı klasördedir. İlk rapordaki topluluk bilgisinin doğrulanmadığı notu bu güncellemeyle aşılmıştır. İki gün şartı ve diğer kişisel/ölçüm eksikleri kontrol kaydında açıkça korunur.

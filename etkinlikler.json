@@ -1,6 +1,6 @@
 [
   {"id":1,"baslik":"Web Programlama Atölyesi","tur":"atolye","tarih":"2026-11-09","yer":"Mühendislik Fakültesi · Bilgisayar Lab. 1","kontenjan":30},
-  {"id":2,"baslik":"Yazılım Topluluğu Tanışma Buluşması","tur":"topluluk","tarih":"2026-11-10","yer":"Öğrenci Yaşam Merkezi","kontenjan":120},
+  {"id":2,"baslik":"Açık Kaynak Yazılım Geliştirme Topluluğu Tanışma Buluşması","tur":"topluluk","tarih":"2026-11-10","yer":"Öğrenci Yaşam Merkezi","kontenjan":120},
   {"id":3,"baslik":"Yapay Zekâ ve Geleceğin Meslekleri","tur":"soylesi","tarih":"2026-11-11","yer":"Erdoğan Akdağ Kongre Merkezi","kontenjan":200},
   {"id":4,"baslik":"Git ile Birlikte Üretmek","tur":"atolye","tarih":"2026-11-12","yer":"Mühendislik Fakültesi · Bilgisayar Lab. 2","kontenjan":25},
   {"id":5,"baslik":"Fotoğraf Topluluğu Kampüs Yürüyüşü","tur":"topluluk","tarih":"2026-11-13","yer":"Merkez Kütüphane önü","kontenjan":40},

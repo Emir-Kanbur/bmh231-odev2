@@ -1,0 +1,2 @@
+There has been no change in the accessibility tree for Window: "Bozok Etkinlik · Kampüste buluşalım".
+The focused UI element is 671 pop up button Throttling, Value: Presets: 3G

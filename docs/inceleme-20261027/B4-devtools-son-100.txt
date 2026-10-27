@@ -1,0 +1,2 @@
+There has been no change in the accessibility tree for Window: "Bozok Etkinlik · Kampüste buluşalım".
+The focused UI element is 503 link http://localhost:3000/, Value: localhost:3000/
