@@ -80,3 +80,27 @@ async function etkinlikleriYukle() {
 }
 yenile.addEventListener('click', etkinlikleriYukle);
 etkinlikleriYukle();
+
+const form = document.querySelector('#oneri-formu');
+const formSonuc = document.querySelector('#form-sonuc');
+function bugunISO() {
+  const bugun = new Date();
+  return `${bugun.getFullYear()}-${String(bugun.getMonth() + 1).padStart(2, '0')}-${String(bugun.getDate()).padStart(2, '0')}`;
+}
+form.elements.tarih.min = bugunISO();
+form.addEventListener('submit', olay => {
+  olay.preventDefault();
+  const baslik = form.elements.baslik;
+  const tarih = form.elements.tarih;
+  const eposta = form.elements.eposta;
+  const kontroller = [
+    [baslik, baslik.value.trim().length >= 5, 'Etkinlik adı en az 5 karakter olmalıdır.'],
+    [tarih, Boolean(tarih.value) && tarih.validity.valid && tarih.value >= bugunISO(), 'Bugün veya gelecekteki geçerli bir tarih seçiniz.'],
+    [eposta, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(eposta.value.trim()) && eposta.validity.valid, 'Geçerli bir e-posta adresi giriniz.']
+  ];
+  const hatalar = kontroller.filter(([, gecerli]) => !gecerli);
+  kontroller.forEach(([alan, gecerli]) => alan.setAttribute('aria-invalid', String(!gecerli)));
+  formSonuc.className = hatalar.length ? 'hata' : 'basari';
+  formSonuc.textContent = hatalar.length ? hatalar.map(([, , metin]) => metin).join('\n') : 'Teşekkürler! Öneriniz doğrulandı. Bu demo bilgileri kaydetmez veya göndermez.';
+  if (hatalar.length) hatalar[0][0].focus();
+});
