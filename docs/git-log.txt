@@ -1,3 +1,5 @@
+* a3aba02 Öğrenci numaralı yerel rapor klasörünü sürüm takibinden ayır
+* 55120b5 Son doğrulama çıktısını ve gerçek commit günlüğünü güncelle
 * 83bb7ac Gerçek tarayıcı, curl ve Lighthouse kanıtlarını ve tekrar test betiğini ekle
 * 91d0355 Lighthouse bulgusuna göre logo bağlantısının erişilebilir adını düzelt
 * 81fffdd README kullanımını belgele ve takvimde olmayan API tarihlerini reddet
