@@ -1,0 +1,63 @@
+# Bozok Etkinlik
+
+BMH231 Web Programlama Ödev 2 için semantik HTML, duyarlı CSS ve JavaScript ile hazırlanmış kampüs etkinlik panosu. Sunucu yalnızca Node.js'in `http`, `fs`, `path` modüllerini kullanır. Express, ön yüz framework'ü ve harici çalışma zamanı bağımlılığı yoktur.
+
+## Çalıştırma
+
+Node.js 22 veya üzeri gerekir.
+
+```sh
+git clone https://github.com/Emir-Kanbur/bmh231-odev2.git
+cd bmh231-odev2
+npm start
+```
+
+Tarayıcıda http://localhost:3000 adresini açın. `npm install` gerekmez. Sunucuyu Ctrl+C ile durdurabilirsiniz. 3000 portu başka bir uygulama tarafından kullanılıyorsa önce o uygulamayı kapatın.
+
+```sh
+npm run check
+npm test
+```
+
+`check`, kaynakların JavaScript sözdizimini; `test`, gerçek HTTP istekleriyle altı sunucu senaryosunu kontrol eder. Derleme, TypeScript veya lint aracı kullanılmaz; dosyalar doğrudan çalıştırılır.
+
+## API sözleşmesi
+
+Tek veri kaynağı `etkinlikler.json` dosyasıdır. Alanlar: `id` (benzersiz tamsayı), `baslik` (metin), `tur` (`atolye`, `soylesi`, `topluluk`), `tarih` (`YYYY-AA-GG`), `yer` (metin), `kontenjan` (negatif olmayan tamsayı). İstemci gelen verinin biçimini kontrol eder. Bilinmeyen tür filtresi boş dizi döndürür.
+
+| Yöntem ve yol | Durum | Yanıt |
+|---|---|---|
+| GET / | 200 | public/index.html |
+| GET /stil.css, /betik.js | 200 | UTF-8 CSS / JavaScript |
+| GET /api/etkinlikler | 200 | Etkinlik dizisi |
+| GET /api/etkinlikler?tur=atolye | 200 | Filtrelenmiş dizi |
+| GET /api/etkinlikler/2 | 200 | Tek etkinlik |
+| GET /api/etkinlikler/999 | 404 | `{"hata":"Etkinlik bulunamadı"}` |
+| GET /bilinmeyen | 404 | Düz metin |
+| GET /%ZZ | 400 | Geçersiz yol |
+| GET dışındaki yöntemler | 405 | Düz metin, Allow: GET |
+| Veri dosyası okunamazsa API | 500 | JSON hata |
+
+API JSON yanıtları `application/json; charset=utf-8` kullanır. Statik dosyalar yalnızca `public/` içinden sunulur; sembolik bağlantıyla dışarı çıkış da engellenir.
+
+## Kullanım
+
+- Tür düğmeleriyle filtreleyin, başlığa göre arayın. Türkçe büyük/küçük harf dönüşümü kullanılır.
+- Öneri formunda en az beş karakterli bir başlık, bugün veya gelecek tarih ve geçerli e-posta girin.
+- Form öneriyi **göndermez veya kaydetmez**; yalnızca istemci tarafında doğrular.
+- Yükleme başarısız olduğunda “Yeniden dene” düğmesini kullanın.
+- Tab tuşuyla gezinilebilir; ilk bağlantı doğrudan listeye atlar.
+
+Etkinlikler gerçekçi ders örnekleridir; resmî duyuru veya gerçek katılım kaydı değildir. Yazılım topluluğu bir örnek olarak seçilmiştir; öğrencinin üyeliği veya ilgisi doğrulanmamıştır.
+
+## Görünüm
+
+![1280 piksel genişlikte etkinlik panosu](docs/01-masaustu.png)
+
+Mobil, filtre, boş sonuç, form ve hata durumları `docs/` klasöründedir. API test çıktıları, Lighthouse ham raporları, curl çıktıları ve ağ ölçümleri de aynı klasörde tutulur.
+
+## Teslim durumu ve yapay zekâ kullanımı
+
+Uygulama, testler, açıklamalar ve rapor OpenAI Codex yardımıyla üretilmiştir. Öğrenci tarafından bağımsız yazılmış gibi sunulmamalıdır. Ödev yönergesi doğrudan yapay zekâya ödev hazırlatılmasını kabul etmediği için bu çalışma teslim kurallarını karşılayan bağımsız öğrenci çalışması olarak değerlendirilemez.
+
+Commit tarihleri gerçektir. En az iki farklı güne yayılmış commit koşulu ilk hazırlama gününde tamamlanamaz; sonraki bir günde gerçek bir çalışma ve commit gerekir. Ölçümlerdeki otomatik tarayıcı/CDP yöntemi ve DevTools arayüzüyle istenen adımlardan ayrılan noktalar PDF raporunda açıkça belirtilmiştir. BOYSİS yüklemesi yapılmamıştır.

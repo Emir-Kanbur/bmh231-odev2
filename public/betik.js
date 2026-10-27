@@ -53,7 +53,8 @@ arama.addEventListener('input', ciz);
 function gecerliEtkinlik(e) {
   return e && Number.isInteger(e.id) && typeof e.baslik === 'string' && Object.hasOwn(turAdlari, e.tur)
     && typeof e.yer === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(e.tarih)
-    && !Number.isNaN(Date.parse(e.tarih)) && Number.isInteger(e.kontenjan) && e.kontenjan >= 0;
+    && !Number.isNaN(Date.parse(e.tarih)) && new Date(e.tarih).toISOString().slice(0, 10) === e.tarih
+    && Number.isInteger(e.kontenjan) && e.kontenjan >= 0;
 }
 async function etkinlikleriYukle() {
   hazir = false;
