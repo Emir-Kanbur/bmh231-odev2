@@ -1,3 +1,6 @@
+* 83bb7ac Gerçek tarayıcı, curl ve Lighthouse kanıtlarını ve tekrar test betiğini ekle
+* 91d0355 Lighthouse bulgusuna göre logo bağlantısının erişilebilir adını düzelt
+* 81fffdd README kullanımını belgele ve takvimde olmayan API tarihlerini reddet
 * eefaafd API sözleşmesini, MIME türlerini ve dosya erişim sınırlarını test et
 * 6ad1141 Öneri formuna tarih, başlık ve e-posta doğrulaması ekle
 * 128c948 Async fetch yükleme, veri kontrolü ve hatadan yeniden deneme akışını ekle
