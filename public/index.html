@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Bozok kampüsündeki atölye, söyleşi ve topluluk etkinliklerini listeleyin ve arayın.">
+    <title>Bozok Etkinlik</title>
+    <link rel="icon" href="/simge.svg?v=3" type="image/svg+xml">
+    <link rel="stylesheet" href="/stil.css">
+    <script src="/betik.js" defer></script>
+</head>
+
+<body>
+    <a class="atla" href="#liste">Etkinliklere geç</a>
+    <header class="ust kapsayici">
+        <a class="logo" href="/"><img class="logo-simge" src="/simge.svg?v=3" width="36" height="36" alt="">Bozok
+            Etkinlik</a>
+        <nav aria-label="Ana gezinme"><a href="#liste">Etkinlikler</a><a href="#oneri">Etkinlik öner</a></nav>
+    </header>
+    <main class="kapsayici">
+        <section id="liste" aria-labelledby="ana-baslik">
+            <div class="hero">
+                <h1 id="ana-baslik">Kampüs Etkinlikleri</h1>
+                <p class="aciklama">Kampüsteki atölye, söyleşi ve topluluk etkinliklerini inceleyin. Tür seçerek veya
+                    etkinlik adına göre arama yaparak listeyi daraltabilirsiniz.</p>
+            </div>
+            <div class="liste-baslik">
+                <h2>Yaklaşan etkinlikler</h2><span class="donem">KASIM 2026</span>
+            </div>
+            <div class="araclar">
+                <div class="filtreler" role="group" aria-label="Etkinlik türü">
+                    <button type="button" class="secili" data-tur="" aria-pressed="true">Tümü</button>
+                    <button type="button" data-tur="atolye" aria-pressed="false">Atölye</button>
+                    <button type="button" data-tur="soylesi" aria-pressed="false">Söyleşi</button>
+                    <button type="button" data-tur="topluluk" aria-pressed="false">Topluluk</button>
+                </div>
+                <div class="arama-alan"><label for="arama" class="sr-only">Etkinlik başlığında ara</label><span
+                        aria-hidden="true">⌕</span><input id="arama" type="search" placeholder="Bir etkinlik ara…"
+                        autocomplete="off"></div>
+            </div>
+            <p id="durum" class="durum" role="status" aria-live="polite">Yükleniyor…</p>
+            <button id="yenile" class="ikincil" type="button" hidden>Yeniden dene</button>
+            <div id="kartlar" class="kartlar" aria-busy="true"></div>
+            <p class="veri-notu">Ders projesi için hazırlanmış gerçekçi etkinliklerdir; resmî etkinlik duyurusu
+                değildir.</p>
+        </section>
+        <section id="oneri" class="oneri" aria-labelledby="oneri-baslik">
+            <div>
+                <h2 id="oneri-baslik">Etkinlik Öner</h2>
+                <p>Etkinlik öneriniz için formu doldurun.</p>
+                <p class="form-notu" id="oneri-notu">Bilgiler yalnızca kontrol edilir; gönderilmez veya kaydedilmez.</p>
+            </div>
+            <form id="oneri-formu" novalidate>
+                <label for="baslik">Etkinlik adı</label><input id="baslik" name="baslik" required minlength="5"
+                    placeholder="En az 5 karakter" aria-describedby="form-sonuc">
+                <div class="form-satir">
+                    <div><label for="tarih">Etkinlik tarihi</label><input id="tarih" name="tarih" type="text"
+                            inputmode="numeric" maxlength="10" placeholder="GG.AA.YYYY" required
+                            aria-describedby="form-sonuc"></div>
+                    <div><label for="eposta">E-posta adresi</label><input id="eposta" name="eposta" type="email"
+                            required autocomplete="email" placeholder="ornek@posta.com" aria-describedby="form-sonuc">
+                    </div>
+                </div>
+                <p class="alan-notu">Tüm alanların doldurulması zorunludur.</p>
+                <button class="gonder" type="submit" aria-describedby="oneri-notu">Bilgileri kontrol et</button>
+                <p id="form-sonuc" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <footer class="kapsayici"><span>Emir Kanbur - BMH231 Web Programlama</span></footer>
+</body>
+
+</html>
