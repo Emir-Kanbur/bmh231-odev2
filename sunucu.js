@@ -25,6 +25,9 @@ const sunucu = http.createServer(async (req, res) => {
     if (apiIstegi) {
       // JSON dosyası hem sunucunun hem istemcinin tek veri kaynağıdır.
       const etkinlikler = JSON.parse(await fs.promises.readFile(path.join(__dirname, 'etkinlikler.json'), 'utf8'));
+      if (!Array.isArray(etkinlikler)) {
+  throw new Error('Etkinlik verisi bir dizi olmalıdır');
+}
       if (url.pathname === '/api/etkinlikler') {
         const tur = url.searchParams.get('tur');
         return json(res, 200, tur ? etkinlikler.filter(e => e.tur === tur) : etkinlikler);
