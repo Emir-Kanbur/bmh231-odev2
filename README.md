@@ -19,7 +19,7 @@ npm run check
 npm test
 ```
 
-`check`, kaynakların JavaScript sözdizimini; `test`, gerçek HTTP istekleriyle yedi sunucu senaryosunu kontrol eder. Veri dosyası bulunamadığında API'nin 500 JSON, bilinmeyen dosyaların 404 döndürmesi de test edilir. Derleme, TypeScript veya lint aracı kullanılmaz; dosyalar doğrudan çalıştırılır.
+`check`, kaynakların JavaScript sözdizimini; test, Node.js'in test sistemiyle API, HTTP durum kodları, dosya erişimi ve hata senaryolarını kontrol eder. Veri dosyası bulunamadığında API'nin 500 JSON, bilinmeyen dosyaların 404 döndürmesi de test edilir. Derleme, TypeScript veya lint aracı kullanılmaz; dosyalar doğrudan çalıştırılır.
 
 ## API sözleşmesi
 
