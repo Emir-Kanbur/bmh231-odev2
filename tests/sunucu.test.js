@@ -63,6 +63,23 @@ test('API veri dosyası bozuk JSON içerirse 500 JSON döndürür', async t => {
     assert.deepEqual(await yanit.json(), { hata: 'Etkinlik verisi okunamadı' });
   }
 });
+test('API etkinlik verisi dizi değilse 500 döndürür', async t => {
+  const asilOku = fs.promises.readFile;
+  const veriDosyasi = path.join(__dirname, '../etkinlikler.json');
+  t.mock.method(fs.promises, 'readFile', async function (dosya, ...secenekler) {
+    if (path.resolve(dosya) === path.resolve(veriDosyasi)) {
+      return '{"mesaj":"Bu bir etkinlik dizisi değil"}';
+    }
+    return asilOku.call(this, dosya, ...secenekler);
+  });
+  for (const yol of ['/api/etkinlikler', '/api/etkinlikler/2']) {
+    const yanit = await fetch(taban + yol);
+    assert.equal(yanit.status, 500);
+    assert.equal(yanit.headers.get('content-type'), 'application/json; charset=utf-8');
+    assert.deepEqual(await yanit.json(), { hata: 'Etkinlik verisi okunamadı' });
+  }
+});
+
 test('GET dışındaki yöntemler 405 ve Allow döndürür', async () => {
   for (const method of ['DELETE', 'POST', 'PUT', 'HEAD']) {
     const yanit = await fetch(`${taban}/api/etkinlikler/2`, { method });
