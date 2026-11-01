@@ -63,7 +63,7 @@ async function etkinlikleriYukle() {
   durum.textContent = 'Yükleniyor…';
   yenile.hidden = true;
   try {
-    const response = await fetch('/api/etkinlikler-hatali');
+    const response = await fetch('/api/etkinlikler');
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const veri = await response.json();
     if (!Array.isArray(veri) || !veri.every(gecerliEtkinlik)) throw new Error('Geçersiz etkinlik verisi');
