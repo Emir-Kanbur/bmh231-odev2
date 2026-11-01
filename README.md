@@ -52,5 +52,5 @@ Etkinlikler gerçekçi ders örnekleridir; resmî duyuru veya gerçek katılım 
 
 ## Görünüm
 
-![1280 piksel genişlikte etkinlik panosu](docs/01-masaustu.png)
+![1280 piksel genişlikte etkinlik panosu](docs/B1-Masaustu.png)
 
