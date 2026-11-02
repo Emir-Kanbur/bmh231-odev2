@@ -56,5 +56,4 @@ Etkinlikler gerçekçi ders örnekleridir; resmî duyuru veya gerçek katılım 
 
 ## Rapor
 
-Ödevi geliştirdiğim gün ve o günler içerisinde neler yaptığım burada yer almakta. (docs/rapor.md)
-
+Ödevi geliştirdiğim günlerde neler yaptığım [rapor.md](docs/rapor.md) dosyasında yer alıyor.
