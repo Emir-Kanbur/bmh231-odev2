@@ -74,22 +74,6 @@ button {
     height: 36px;
 }
 
-.logo-isaret {
-    display: grid;
-    place-items: center;
-    background: var(--yesil);
-    color: white;
-    width: 38px;
-    height: 38px;
-    border-radius: 11px;
-    font-size: 30px;
-    margin-right: 4px;
-}
-
-.logo-ince {
-    font-weight: 400;
-    color: var(--soluk);
-}
 
 nav {
     display: flex;
@@ -115,23 +99,6 @@ nav a:hover {
     max-width: 700px;
 }
 
-.ust-yazi {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.6px;
-    margin: 0 0 22px;
-}
-
-.nokta {
-    width: 7px;
-    height: 7px;
-    background: var(--yesil);
-    border-radius: 50%;
-}
-
 h1 {
     font-size: clamp(28px, 3.2vw, 36px);
     line-height: 1.2;
@@ -153,41 +120,6 @@ h1 em {
     margin: 0;
 }
 
-.hero-not {
-    position: relative;
-    background: var(--vurgu);
-    border-radius: 5px 60px 5px 5px;
-    padding: 26px;
-    height: 228px;
-    transform: rotate(3deg);
-}
-
-.not-sayi {
-    font: 72px Georgia, serif;
-    letter-spacing: -5px;
-}
-
-.not-sayi span {
-    font: 28px Georgia, serif;
-    letter-spacing: -1px;
-}
-
-.hero-not p {
-    margin: 0 0 16px;
-    font-size: 18px;
-}
-
-.not-alt {
-    font-size: 9px;
-    letter-spacing: 1.4px;
-}
-
-.not-ok {
-    position: absolute;
-    right: 22px;
-    bottom: 12px;
-    font-size: 40px;
-}
 
 .liste-baslik {
     display: flex;
@@ -376,10 +308,6 @@ h2 {
     margin-bottom: 45px;
 }
 
-.oneri .ust-yazi {
-    margin-bottom: 12px;
-}
-
 .oneri h2 {
     font-size: 24px;
 }
@@ -542,25 +470,6 @@ footer {
 
     h1 {
         letter-spacing: -.5px;
-    }
-
-    .hero-not {
-        height: 140px;
-        transform: none;
-        border-top-right-radius: 40px;
-    }
-
-    .not-sayi {
-        font-size: 46px;
-    }
-
-    .hero-not p {
-        margin: 0 0 6px;
-        font-size: 14px;
-    }
-
-    .not-ok {
-        font-size: 35px;
     }
 
     .liste-baslik h2 {
