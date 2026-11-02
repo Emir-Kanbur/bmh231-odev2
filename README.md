@@ -54,3 +54,7 @@ Etkinlikler gerçekçi ders örnekleridir; resmî duyuru veya gerçek katılım 
 
 ![1280 piksel genişlikte etkinlik panosu](docs/B1-Masaustu.png)
 
+## Rapor
+
+Ödevi geliştirdiğim gün ve o günler içerisinde neler yaptığım burada yer almakta. (docs/rapor.md)
+
